@@ -115,9 +115,10 @@ form {
     input {
         border: 1px solid transparent;
         box-shadow: 0 1px 4px rgba(55, 57, 76, 0.1);
-        margin-right: 14px;
+        margin: 0 14px 10px 0;
         padding: 14px;
-        width: 340px;
+        max-width: 340px;
+        width: 100%;
 
         &:focus, &:active {
             border: 1px solid $primary;
@@ -130,7 +131,7 @@ form {
 /* Layout */
 header {
     background: $grey-light;
-    padding: 34px 0 166px;
+    padding: 34px 0 156px;
     margin-bottom: 90px;
 
     &.small {
