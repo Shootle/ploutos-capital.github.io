@@ -1,3 +1,149 @@
+/* Variables */
+$white:         #FFFFFF;
+$primary:       #4089F7;
+$text:          #37394C;
+$grey-light:    #F3F6F8;
+$grey-mid:      #B7C3CD;
+$grey-dark:     #8694A0;
+
+$font-serif: Georgia, Times, "Times New Roman", serif;
+$font-sans: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+
+
+/* Mixins */
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+
+/* Theme */
 body {
-	
+    font-family: $font-sans;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 100px 0 0;
+    text-align: center;
+}
+h2 {
+    color: $grey-dark;
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 26px;
+    text-align: center;
+}
+h3 {
+    font-family: $font-serif;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+p {
+    font-family: $font-serif;
+    font-size: 21px;
+    line-height: 34px;
+}
+
+a {
+    color: $primary;
+    text-decoration: underline;
+    @include transition(all 0.2s ease-in-out);
+    &:hover {
+        color: $grey-dark;
+    }
+}
+
+button, .button {
+    background: $primary;
+    color: $white;
+    display: inline-block;
+    font-size: 15px;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include transition(all 0.2s ease-in-out);
+
+    &:hover {
+        background: #397ce0;
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Layout */
+header {
+    background: $grey-light;
+    padding: 34px 0 166px;
+    margin-bottom: 90px;
+
+    .brand {
+        background: url(../img/logo.png) no-repeat;
+        background-size: 100%;
+        display: inline-block;
+        height: 66px;
+        width: 177px;
+    }
+
+    nav {
+        padding-top: 24px;
+
+        .nav-wrapper {
+            float: right;
+        }
+
+        a {
+            color: $text;
+            font-size: 14px;
+            font-weight: 800;
+            margin-left: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:hover {
+                color: $primary;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+footer {
+    padding: 100px 0 90px;
+
+    .social-links {
+        margin-bottom: 26px;
+
+        li {
+            background: $primary;
+            border-radius: 20px;
+            color: $white;
+            display: inline-block;
+            font-size: 22px;
+            height: 36px;
+            list-style: none;
+            padding: 3px 0;
+            text-align: center;
+            width: 36px;
+            @include transition(all 0.2s ease-in-out);
+
+            &:hover {
+                background: #397ce0;
+            }
+        }
+    }
+    .legal {
+        color: $grey-dark;
+        font-size: 14px;
+    }
 }
