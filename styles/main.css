@@ -2,7 +2,26 @@
 /* Mixins */
 /* Theme */
 body {
-  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  body.open {
+    overflow: hidden; }
+    body.open nav .nav-wrapper {
+      display: block;
+      padding: 15vh 0 40px;
+      position: fixed;
+      width: 100%;
+      left: 0; }
+      body.open nav .nav-wrapper .social-links {
+        display: block; }
+      body.open nav .nav-wrapper a {
+        color: #FFFFFF;
+        display: block;
+        font-size: 20px;
+        margin: 30px 0;
+        text-align: center;
+        width: 100%; }
 
 h1 {
   font-size: 42px;
@@ -14,6 +33,7 @@ h2 {
   font-size: 19px;
   font-weight: normal;
   line-height: 26px;
+  margin-bottom: 50px;
   text-align: center; }
 
 h3 {
@@ -39,10 +59,12 @@ a {
 
 button, .button {
   background: #4089F7;
+  border: none;
   color: #FFFFFF;
   display: inline-block;
-  font-size: 15px;
-  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 20px;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: all 0.2s ease-in-out;
@@ -59,11 +81,25 @@ ul {
   margin: 0;
   padding: 0; }
 
+form {
+  text-align: center; }
+  form input {
+    border: 1px solid transparent;
+    box-shadow: 0 1px 4px rgba(55, 57, 76, 0.1);
+    margin-right: 14px;
+    padding: 14px;
+    width: 340px; }
+    form input:focus, form input:active {
+      border: 1px solid #4089F7;
+      outline: none; }
+
 /* Layout */
 header {
   background: #F3F6F8;
   padding: 34px 0 166px;
   margin-bottom: 90px; }
+  header.small {
+    padding-bottom: 90px; }
   header .brand {
     background: url(../img/logo.png) no-repeat;
     background-size: 100%;
@@ -73,20 +109,28 @@ header {
   header nav {
     padding-top: 24px; }
     header nav .nav-wrapper {
-      float: right; }
+      float: right;
+      position: relative;
+      z-index: 101; }
+      @media screen and (max-width: 630px) {
+        header nav .nav-wrapper {
+          display: none; } }
+      header nav .nav-wrapper .social-links {
+        display: none; }
     header nav a {
       color: #37394C;
       font-size: 14px;
       font-weight: 800;
-      margin-left: 50px;
       text-decoration: none;
       text-transform: uppercase; }
+      header nav a:not(:first-of-type) {
+        margin-left: 50px; }
       header nav a:hover {
         color: #4089F7;
         text-decoration: none; }
 
 footer {
-  padding: 100px 0 90px; }
+  padding: 140px 0 90px; }
   footer .social-links {
     margin-bottom: 26px; }
     footer .social-links li {
@@ -110,3 +154,148 @@ footer {
   footer .legal {
     color: #8694A0;
     font-size: 14px; }
+
+/* Links */
+.Links ul.links a {
+  text-decoration: none; }
+
+.Links ul.links li {
+  background: #F3F6F8;
+  border-left: 3px solid #4089F7;
+  color: #37394C;
+  font-weight: 600;
+  list-style: none;
+  padding: 14px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .Links ul.links li:hover {
+    background: #B7C3CD; }
+
+/* FAQ */
+.FAQ .faq-item {
+  margin-bottom: 60px; }
+
+/* Mobile */
+#mobile-toggle {
+  width: 36px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  z-index: 102;
+  display: none; }
+
+@media screen and (max-width: 630px) {
+  #mobile-toggle {
+    display: block; } }
+
+#mobile-toggle span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 50%;
+  background: #4089F7;
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out; }
+
+body.open #mobile-toggle span {
+  background: #FFFFFF; }
+
+#mobile-toggle span:nth-child(even) {
+  left: 50%; }
+
+#mobile-toggle span:nth-child(odd) {
+  left: 0px; }
+
+#mobile-toggle span:nth-child(1), #mobile-toggle span:nth-child(2) {
+  top: 0px; }
+
+#mobile-toggle span:nth-child(3), #mobile-toggle span:nth-child(4) {
+  top: 14px; }
+
+#mobile-toggle span:nth-child(5), #mobile-toggle span:nth-child(6) {
+  top: 28px; }
+
+body.open .navbar-bg {
+  border-radius: 0;
+  height: 100%;
+  width: 100%; }
+
+body.open #mobile-toggle span:nth-child(1), body.open #mobile-toggle span:nth-child(6) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+body.open #mobile-toggle span:nth-child(2), body.open #mobile-toggle span:nth-child(5) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+body.open #mobile-toggle span:nth-child(1) {
+  left: 2px;
+  top: 7px; }
+
+body.open #mobile-toggle span:nth-child(2) {
+  left: calc(50% - 5px);
+  top: 7px; }
+
+body.open #mobile-toggle span:nth-child(3) {
+  left: -50%;
+  opacity: 0; }
+
+body.open #mobile-toggle span:nth-child(4) {
+  left: 100%;
+  opacity: 0; }
+
+body.open #mobile-toggle span:nth-child(5) {
+  left: 2px;
+  top: 18px; }
+
+body.open #mobile-toggle span:nth-child(6) {
+  left: calc(50% - 5px);
+  top: 18px; }
+
+.navbar-bg {
+  -webkit-transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
+  -ms-transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
+  -o-transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.3, 1, 0.3, 1);
+  background: #4089F7;
+  border-radius: 0 0 6000px 6000px;
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 0;
+  right: 0;
+  width: 0;
+  z-index: 100; }
+
+@media screen and (min-width: 630px) {
+  .navbar-bg {
+    display: none; } }
