@@ -2,6 +2,7 @@
 /* Mixins */
 /* Theme */
 body {
+  color: #37394C;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }

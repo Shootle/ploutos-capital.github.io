@@ -22,6 +22,7 @@ $font-sans: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verda
 
 /* Theme */
 body {
+    color: $text;
     font-family: $font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
