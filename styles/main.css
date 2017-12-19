@@ -36,12 +36,6 @@ h2 {
   line-height: 26px;
   margin-bottom: 50px;
   text-align: center; }
-  h2:first-of-type {
-    margin-bottom: 20px; }
-  h2:last-of-type {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 14px; }
 
 h3 {
   font-family: Georgia, Times, "Times New Roman", serif;
@@ -83,6 +77,10 @@ button, .button {
     background: #397ce0;
     color: #FFFFFF;
     text-decoration: none; }
+  button.outline, .button.outline {
+    background: #FFFFFF;
+    border: 1px solid #4089F7;
+    color: #4089F7; }
 
 ul {
   margin: 0;
@@ -108,10 +106,13 @@ form {
       border: 1px solid #4089F7;
       outline: none; }
 
+.lowercase {
+  text-transform: none !important; }
+
 /* Layout */
 header {
   background: #F3F6F8;
-  padding: 34px 0 156px;
+  padding: 34px 0 30px;
   margin-bottom: 90px; }
   header.small {
     padding-bottom: 90px; }
@@ -143,6 +144,17 @@ header {
       header nav a:hover {
         color: #4089F7;
         text-decoration: none; }
+  header .ctas {
+    margin-top: 40px;
+    text-align: center; }
+    header .ctas .button:last-of-type {
+      margin-left: 14px; }
+  header .leads {
+    margin-top: 80px; }
+    header .leads h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 14px; }
 
 footer {
   padding: 140px 0 90px; }

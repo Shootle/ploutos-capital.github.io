@@ -65,14 +65,6 @@ h2 {
     line-height: 26px;
     margin-bottom: 50px;
     text-align: center;
-    &:first-of-type {
-        margin-bottom: 20px;
-    }
-    &:last-of-type {
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-    }
 }
 h3 {
     font-family: $font-serif;
@@ -112,6 +104,12 @@ button, .button {
         color: $white;
         text-decoration: none;
     }
+
+    &.outline {
+        background: $white;
+        border: 1px solid $primary;
+        color: $primary;
+    }
 }
 
 ul {
@@ -145,11 +143,14 @@ form {
     }
 }
 
+.lowercase {
+    text-transform: none !important;
+}
 
 /* Layout */
 header {
     background: $grey-light;
-    padding: 34px 0 156px;
+    padding: 34px 0 30px;
     margin-bottom: 90px;
 
     &.small {
@@ -196,6 +197,23 @@ header {
                 color: $primary;
                 text-decoration: none;
             }
+        }
+    }
+
+    .ctas {
+        margin-top: 40px;
+        text-align: center;
+        .button:last-of-type {
+            margin-left: 14px;
+        }
+    }
+
+    .leads {
+        margin-top: 80px;
+        h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 14px;
         }
     }
 }
