@@ -173,7 +173,7 @@ header {
             position: relative;
             z-index: 101;
 
-            @media screen and (max-width: 630px) {
+            @media screen and (max-width: 1000px) {
                 display: none;
             }
 
@@ -336,7 +336,7 @@ footer {
     z-index: 102;
     display: none;
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 1000px) {
     #mobile-toggle {
         display: block;
     }
@@ -427,7 +427,7 @@ body.open #mobile-toggle span:nth-child(6) {
     width: 0;
     z-index: 100;
 }
-@media screen and (min-width: 630px) {
+@media screen and (min-width: 1000px) {
     .navbar-bg {
         display: none;
     }
