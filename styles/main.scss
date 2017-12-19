@@ -64,6 +64,9 @@ h1 {
     strong {
         font-weight: 900;
     }
+    &.mid {
+        font-weight: 700;
+    }
 }
 h2 {
     color: $grey-dark;

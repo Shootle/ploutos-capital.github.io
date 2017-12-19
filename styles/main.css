@@ -34,6 +34,8 @@ h1 {
   text-transform: uppercase; }
   h1 strong {
     font-weight: 900; }
+  h1.mid {
+    font-weight: 700; }
 
 h2 {
   color: #8694A0;
