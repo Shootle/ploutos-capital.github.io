@@ -147,11 +147,14 @@ header {
   header .ctas {
     margin-top: 40px;
     text-align: center; }
+    header .ctas .button:first-of-type {
+      margin-bottom: 14px; }
     header .ctas .button:last-of-type {
       margin-left: 14px; }
   header .leads {
-    margin-top: 80px; }
+    margin-top: 70px; }
     header .leads h2 {
+      color: #37394C;
       margin-top: 0;
       margin-bottom: 10px;
       font-size: 14px; }
@@ -221,6 +224,11 @@ footer {
 /* FAQ */
 .FAQ .faq-item {
   margin-bottom: 60px; }
+
+/* Contact */
+.Contact .contact-links a {
+  display: block;
+  margin-bottom: 10px; }
 
 /* Mobile */
 #mobile-toggle {

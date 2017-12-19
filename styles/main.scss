@@ -203,14 +203,18 @@ header {
     .ctas {
         margin-top: 40px;
         text-align: center;
+        .button:first-of-type {
+            margin-bottom: 14px;
+        }
         .button:last-of-type {
             margin-left: 14px;
         }
     }
 
     .leads {
-        margin-top: 80px;
+        margin-top: 70px;
         h2 {
+            color: $text;
             margin-top: 0;
             margin-bottom: 10px;
             font-size: 14px;
@@ -299,6 +303,15 @@ footer {
 .FAQ {
     .faq-item {
         margin-bottom: 60px;
+    }
+}
+
+
+/* Contact */
+.Contact {
+    .contact-links a {
+        display: block;
+        margin-bottom: 10px;
     }
 }
 
