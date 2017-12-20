@@ -333,12 +333,37 @@ footer {
 
     header {
         margin-bottom: 0;
+        padding-bottom: 40px;
     }
 
     section {
         padding: 20px 0;
         h2 {
             margin-bottom: 15px;
+        }
+    }
+
+    .period-selector {
+        text-align: center;
+        padding: 12px 0 20px;
+        button {
+            background: none;
+            border: 1px solid $grey-dark;
+            border-radius: 40px;
+            color: $text;
+            font-size: 11px;
+            margin-right: 6px;
+            padding: 6px 14px;
+            &.active {
+                background: $grey-dark;
+                border-color: $grey-dark;
+                color: $white;
+            }
+            &:hover {
+                background: $grey-med;
+                border-color: $grey-med;
+                color: $white;
+            }
         }
     }
 
