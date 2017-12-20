@@ -239,6 +239,33 @@ footer {
   display: block;
   margin-bottom: 10px; }
 
+/* Dashboard */
+.Dashboard {
+  background: #F3F6F8; }
+  .Dashboard header {
+    margin-bottom: 0; }
+  .Dashboard section {
+    padding: 20px 0; }
+    .Dashboard section h2 {
+      margin-bottom: 15px; }
+  .Dashboard .stat {
+    padding: 10px; }
+    .Dashboard .stat .stat-wrapper {
+      background: #FFFFFF;
+      padding: 20px 0;
+      text-align: center; }
+      .Dashboard .stat .stat-wrapper .stat-value {
+        color: #4089F7;
+        display: block;
+        font-size: 22px;
+        font-weight: 100; }
+      .Dashboard .stat .stat-wrapper .stat-key {
+        display: block;
+        text-transform: uppercase;
+        font-size: 12px;
+        margin-bottom: 8px;
+        font-weight: 600; }
+
 /* Mobile */
 #mobile-toggle {
   width: 36px;

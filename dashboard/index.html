@@ -24,7 +24,7 @@
       <link rel="stylesheet" type="text/css" href="../styles/bootstrap.css">
       <link rel="stylesheet" type="text/css" href="../styles/main.css">
     </head>
-  <body class="FAQ">
+  <body class="Dashboard">
     <header class="small">
       <div class="container">
         <div class="row">
@@ -58,9 +58,58 @@
       </div>
     </header>
     
-    <div class="container">
+    <div class="container container-small">
       <section>
-        <h3>Coming soon</h3>
+        <h2>LUNA Fund Growth</h2>
+        <canvas id="growth-chart"></canvas>
+      </section>
+
+      <section>
+        <h2>Volume (USD)</h2>
+        <div class="row">
+          <div class="col-sm-4 stat">
+            <div class="stat-wrapper">
+              <span class="stat-key">24hr</span>
+              <span class="stat-value" id="volume-hour"></span>
+            </div>
+          </div>
+          <div class="col-sm-4 stat">
+            <div class="stat-wrapper">
+              <span class="stat-key">This month</span>
+              <span class="stat-value" id="volume-month"></span>
+            </div>
+          </div>
+          <div class="col-sm-4 stat">
+            <div class="stat-wrapper">
+              <span class="stat-key">All time</span>
+              <span class="stat-value" id="volume-all"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Number of Trades</h2>
+        <div class="row">
+          <div class="col-sm-4 stat">
+            <div class="stat-wrapper">
+              <span class="stat-key">24hr</span>
+              <span class="stat-value" id="trades-hour"></span>
+            </div>
+          </div>
+          <div class="col-sm-4 stat">
+            <div class="stat-wrapper">
+              <span class="stat-key">This month</span>
+              <span class="stat-value" id="trades-month"></span>
+            </div>
+          </div>
+          <div class="col-sm-4 stat">
+            <div class="stat-wrapper">
+              <span class="stat-key">All time</span>
+              <span class="stat-value" id="trades-all"></span>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
 
@@ -75,7 +124,10 @@
         <span class="legal">&copy; Ploutos Capital. All Rights Reserved.</span>
       </footer>
     </div>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="../js/scripts.js"></script>
+    <script src="../js/dashboard.js"></script>
   </body>
 </html>
