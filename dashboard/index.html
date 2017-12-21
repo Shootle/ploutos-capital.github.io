@@ -73,10 +73,28 @@
         <h2>LUNA Fund Growth</h2>
         <canvas id="growth-chart"></canvas>
         <div class="period-selector">
-          <button class="active" data-period="hourly">Hourly</button>
-          <button data-period="daily">Daily</button>
-          <button data-period="monthly">Monthly</button>
+          <!-- <button class="active" data-period="hourly">Hourly</button> -->
+          <button class="active" data-period="daily">Last 24 hours</button>
+          <button data-period="monthly">Last 30 days</button>
           <button data-period="all">All Time</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>AUM</h2>
+        <div class="row">
+          <div class="col-sm-6 stat">
+            <div class="stat-wrapper">
+              <span class="stat-key">Initial AUM</span>
+              <span class="stat-value" id="aum-initial">20,000</span>
+            </div>
+          </div>
+          <div class="col-sm-6 stat">
+            <div class="stat-wrapper">
+              <span class="stat-key">Current AUM</span>
+              <span class="stat-value" id="aum-current">20,000</span>
+            </div>
+          </div>
         </div>
       </section>
 

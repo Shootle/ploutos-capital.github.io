@@ -1,8 +1,5 @@
 var baseUrl = 'http://our.server.com'
 
-// Element selectors
-
-
 /* Update growth chart */
 function updateChart(period) {
     // axios.post(`${baseUrl}/getGrowth?period=${period}`)
