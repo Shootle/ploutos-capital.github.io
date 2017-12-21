@@ -348,7 +348,7 @@ footer {
         padding: 12px 0 20px;
         button {
             background: none;
-            border: 1px solid $grey-dark;
+            border: 1px solid $grey-med;
             border-radius: 40px;
             color: $text;
             font-size: 11px;
@@ -363,6 +363,9 @@ footer {
                 background: $grey-med;
                 border-color: $grey-med;
                 color: $white;
+            }
+            &:active, &:focus {
+                outline: none;
             }
         }
     }

@@ -91,7 +91,18 @@ function init() {
     updateVolume();
     updateChart('hourly');
 
-    // var periodToggle = document.getElementById('')
+    var periodSelectors = document.querySelectorAll('.period-selector button');
+
+    periodSelectors.forEach(function(b) {
+        b.addEventListener('click', function(e) {
+            var period = e.target.dataset.period;
+
+            periodSelectors.forEach(function(b) { b.className=''; });
+            e.target.className = 'active';
+
+            updateChart(period) ;       
+        })
+    })
 }
 
 init();
