@@ -88,6 +88,13 @@ p {
     font-size: 21px;
     line-height: 34px;
 }
+aside {
+    font-family: $font-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 34px;
+}
 
 a {
     color: $primary;
