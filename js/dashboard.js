@@ -1,35 +1,46 @@
-var baseUrl = 'http://our.server.com'
+var baseUrl = 'https://api.ploutos.capital';
+var aum = [];
+
+/* Grab all AUM data */
+function getAum() {
+    return axios.get(`${baseUrl}/aum`)
+    .then((res) => {
+        aum = res.data
+        return aum;
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
 
 /* Update growth chart */
 function updateChart(period) {
-    // axios.post(`${baseUrl}/getGrowth?period=${period}`)
-    // .then((res) => {
-        var ctx = document.getElementById('growth-chart').getContext('2d');
+    var labels = [];
+    var data = [];
 
-        var labels = [];
-        var data = [];
-        var primaryColor = 'rgb(64, 137, 247)';
+    if (period === 'day') data = aum.slice(-1 * 24) // last 24 hours 
+    else if (period === 'month') data = aum.slice(-1 * 24 * 30) // last 30 days
+    else data = aum // all
+    
+    labels = ["January", "February", "March", "April", "May", "June", "July"];
+    data = [0, 10, 5, 2, 20, 30, 45];
 
-        labels = ["January", "February", "March", "April", "May", "June", "July"];
-        data = [0, 10, 5, 2, 20, 30, 45];
+    var ctx = document.getElementById('growth-chart').getContext('2d');
+    var primaryColor = 'rgb(64, 137, 247)';
 
-        var chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: "USD",
-                    backgroundColor: primaryColor,
-                    borderColor: primaryColor,
-                    data: data,
-                }]
-            },
-            options: {}
-        });
-    // })
-    // .catch((err) => {
-    //     console.log(err)
-    // })
+    var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "USD",
+                backgroundColor: primaryColor,
+                borderColor: primaryColor,
+                data: data,
+            }]
+        },
+        options: {}
+    });
 }
 
 
@@ -84,9 +95,13 @@ function updateTrades() {
 }
 
 function init() {
-    updateTrades();
-    updateVolume();
-    updateChart('hourly');
+    // updateTrades();
+    // updateVolume();
+
+    getAum()
+    .then(function() {
+        updateChart('day');
+    })
 
     var periodSelectors = document.querySelectorAll('.period-selector button');
 
