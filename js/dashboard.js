@@ -10,7 +10,7 @@ function getAum() {
     .then((res) => {
         aum = res.data.data
         initialAum = aum[0].total; // most recent total
-        currentAum = aum[aum.length].total; // most recent total
+        currentAum = aum[aum.length - 1].total; // most recent total
         return aum;
     })
     .catch((err) => {
@@ -32,7 +32,7 @@ function updateChart(period) {
     }
     
     data = relevantAum.map(function(aum) { return aum.total / numTokens; })
-    labels = relevantAum.map(function(aum) { return aum.timestamp; })
+    labels = relevantAum.map(function(aum) { return (new Date(aum.timestamp)).toLocaleString(); })
     
     // labels = ["January", "February", "March", "April", "May", "June", "July"];
     // data = [0, 10, 5, 2, 20, 30, 45];
@@ -125,8 +125,8 @@ function init() {
     getAum()
     .then(function() {
         updateChart('day');
-        // updateTokenValue();
-        // updateAum();
+        updateTokenValue();
+        updateAum();
     })
 
     var periodSelectors = document.querySelectorAll('.period-selector button');
