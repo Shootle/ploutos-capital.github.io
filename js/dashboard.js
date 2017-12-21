@@ -9,6 +9,7 @@ function getAum() {
     return axios.get(`${baseUrl}/aum`)
     .then((res) => {
         aum = res.data.data
+        initialAum = aum[0].total; // most recent total
         currentAum = aum[aum.length].total; // most recent total
         return aum;
     })
@@ -112,9 +113,9 @@ function updateTokenValue() {
 }
 
 /* Updates curent AUM */
-function updateCurrentAum() {
-    document.getElementById('aum-current').innerHTML = `$${currentAum} USD`;
-    document.getElementById('aum-initial').innerHTML = `$${initialAum} USD`;
+function updateAum() {
+    document.getElementById('aum-current').innerHTML = `$${currentAum.toFixed(2)} USD`;
+    document.getElementById('aum-initial').innerHTML = `$${initialAum.toFixed(2)} USD`;
 }
 
 function init() {
