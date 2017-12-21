@@ -114,8 +114,8 @@ function updateTokenValue() {
 
 /* Updates curent AUM */
 function updateAum() {
-    document.getElementById('aum-current').innerHTML = `$${currentAum.toFixed(2)} USD`;
     document.getElementById('aum-initial').innerHTML = `$${initialAum.toFixed(2)} USD`;
+    document.getElementById('aum-current').innerHTML = `$${currentAum.toFixed(2)} USD`;
 }
 
 function init() {
@@ -125,8 +125,8 @@ function init() {
     getAum()
     .then(function() {
         updateChart('day');
-        updateTokenValue();
-        updateAum();
+        // updateTokenValue();
+        // updateAum();
     })
 
     var periodSelectors = document.querySelectorAll('.period-selector button');
