@@ -1,15 +1,19 @@
 var baseUrl = 'https://api.ploutos.capital';
 var aum = [];
+var initialAum = 0;
+var currentAum = 0;
+var numTokens = 27874.44024;
 
 /* Grab all AUM data */
 function getAum() {
     return axios.get(`${baseUrl}/aum`)
     .then((res) => {
-        aum = res.data
+        aum = res.data.data
+        currentAum = aum[aum.length].total; // most recent total
         return aum;
     })
     .catch((err) => {
-        console.log(err);
+        console.log(err);    
     })
 }
 
@@ -18,12 +22,19 @@ function updateChart(period) {
     var labels = [];
     var data = [];
 
-    if (period === 'day') data = aum.slice(-1 * 24) // last 24 hours 
-    else if (period === 'month') data = aum.slice(-1 * 24 * 30) // last 30 days
-    else data = aum // all
+    var relevantAum = aum; // all
+
+    if (period === 'day') {
+        relevantAum = aum.slice(-1 * 24); // last 24 hours 
+    } else if (period === 'month') {
+        relevantAum = aum.slice(-1 * 24 * 30); // last 30 days
+    }
     
-    labels = ["January", "February", "March", "April", "May", "June", "July"];
-    data = [0, 10, 5, 2, 20, 30, 45];
+    data = relevantAum.map(function(aum) { return aum.total / numTokens; })
+    labels = relevantAum.map(function(aum) { return aum.timestamp; })
+    
+    // labels = ["January", "February", "March", "April", "May", "June", "July"];
+    // data = [0, 10, 5, 2, 20, 30, 45];
 
     var ctx = document.getElementById('growth-chart').getContext('2d');
     var primaryColor = 'rgb(64, 137, 247)';
@@ -94,6 +105,18 @@ function updateTrades() {
     // });
 }
 
+/* Uses current AUM to calculate token value */
+function updateTokenValue() {
+    let tokenValue = currentAum / numTokens;
+    document.getElementById('token-value').innerHTML = `$${tokenValue.toFixed(2)} USD`;
+}
+
+/* Updates curent AUM */
+function updateCurrentAum() {
+    document.getElementById('aum-current').innerHTML = `$${currentAum} USD`;
+    document.getElementById('aum-initial').innerHTML = `$${initialAum} USD`;
+}
+
 function init() {
     // updateTrades();
     // updateVolume();
@@ -101,6 +124,8 @@ function init() {
     getAum()
     .then(function() {
         updateChart('day');
+        updateTokenValue();
+        updateAum();
     })
 
     var periodSelectors = document.querySelectorAll('.period-selector button');
